@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>template</title>
+</h:head>
+<h:body>
+	<p:layout fullPage="true">
+
+		<p:layoutUnit position="north" size="100">
+			<ui:insert name="top">
+				<h2>Sistema de Cadastro de Usuários</h2>
+			</ui:insert>
+		</p:layoutUnit>
+
+		<p:layoutUnit position="west" size="300">
+			<ui:insert name="left">
+				<h:form id="form-menu">
+					<h:button value="Incluir" outcome="pages/incluirusuario.xhtml"/>
+				</h:form>
+
+			</ui:insert>
+		</p:layoutUnit>
+
+		<p:layoutUnit position="center">
+			<ui:insert name="conteudo">
+				<h:outputText value="Conteúdo da aplicação - Área editável." />
+			</ui:insert>
+		</p:layoutUnit>
+
+
+		<!-- rodapé -->
+		<p:layoutUnit position="south" size="80">
+			<h:outputText value="Desenvolvido por Deise Souza." />
+		</p:layoutUnit>
+
+	</p:layout>
+</h:body>
+</html>
