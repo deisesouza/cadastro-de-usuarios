@@ -26,8 +26,10 @@
 				<h:inputSecret id="senha" maxlength = "8" size ="30" value="#{UsuarioBean.usuario.senha}" />
 								
 				<p:outputLabel value="Telefone" for="telefone"/>
-				<p:inputText id="ddd" maxlength = "03" size ="03" value="#{UsuarioBean.usuario.ddd}" />
-				<p:inputText id="telefone" maxlength = "10" size ="10" value="#{UsuarioBean.usuario.telefone}" />			
+				<p:inputText id="ddd" maxlength = "03" size ="03" value="#{UsuarioBean.usuario.telefones.ddd}" />
+				<p:inputText id="telefone" maxlength = "10" size ="10" value="#{UsuarioBean.usuario.telefones.telefone}" />			
+				
+				<p:commandButton value="Adicionar Telefone" action="#{UsuarioBean.usuario.addTelefone()}"/>
 				
 				<p:commandButton value="Cadastrar" action="#{UsuarioBean.salvar()}"/>
 				
