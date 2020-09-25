@@ -32,7 +32,7 @@ public class Usuario implements Serializable{
 	private List <Integer> ddd = new ArrayList<Integer>();
 	
 	@Column
-	private List <String> telefones = new ArrayList<String>();
+	private List <String> telefone = new ArrayList<String>();
 	
 	
 	public Usuario() {
@@ -96,12 +96,12 @@ public class Usuario implements Serializable{
 
 
 	public List<String> getTelefone() {
-		return telefones;
+		return telefone;
 	}
 
 
-	public void setTelefone(List<String> telefones) {
-		this.telefones = telefones;
+	public void setTelefone(List<String> telefone) {
+		this.telefone = telefone;
 	}
 
 

@@ -8,17 +8,14 @@
 
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Incluir Usuário</title>
+	<title>Cadastrar</title>
 </h:head>
-
-<ui:composition template="/template/template.xhtml">
-	<ui:define name="conteudo">
 	
-	<h3>Incluir Usuário</h3>
+	<h3>Cadastre-se!</h3>
 	
 		<h:form id="form">
 		<p:messages autoUpdate = "true" id ="mgs"/>
-			<p:panelGrid columns="2">
+			<p:panelGrid columns="3">
 				<p:outputLabel value="Nome" for="name" />
 				<p:inputText id="name" maxlength = "30" size ="30" value="#{UsuarioBean.usuario.nome}"/>
 				
@@ -29,16 +26,12 @@
 				<h:inputSecret id="senha" maxlength = "8" size ="30" value="#{UsuarioBean.usuario.senha}" />
 								
 				<p:outputLabel value="Telefone" for="telefone"/>
-				<p:inputText id="ddd" maxlength = "03" size ="10" value="#{UsuarioBean.usuario.ddd}" />
-				<p:inputText id="telefone" maxlength = "10" size ="20" value="#{UsuarioBean.usuario.telefone}" />			
+				<p:inputText id="ddd" maxlength = "03" size ="03" value="#{UsuarioBean.usuario.ddd}" />
+				<p:inputText id="telefone" maxlength = "10" size ="10" value="#{UsuarioBean.usuario.telefone}" />			
 				
-				<p:commandButton value="Salvar" action="#{UsuarioBean.salvar()}"/>
-				<p:outputLabel value="Telefone" />
+				<p:commandButton value="Cadastrar" action="#{UsuarioBean.salvar()}"/>
+				
 		</p:panelGrid>
 		</h:form>
-	
-	</ui:define>
-</ui:composition>
-
 
 </html>

@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 public class ConectionFactory {
 
-		EntityManagerFactory fabricante = Persistence.createEntityManagerFactory("usuariosPU");	
+		EntityManagerFactory fabricante = Persistence.createEntityManagerFactory("cadastrousuarios");	
 		
 		public EntityManager Conectar(){
 			return fabricante.createEntityManager();

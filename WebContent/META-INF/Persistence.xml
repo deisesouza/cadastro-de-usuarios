@@ -5,7 +5,7 @@
     	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
          http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
         
-        <persistence-unit name="usuariosPU">
+        <persistence-unit name="cadastrousuarios">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <properties>
@@ -13,8 +13,8 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" /> <!-- DB Dialect -->
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" /> <!-- DB Driver -->
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bdusuarios" /> <!-- banco de dados -->
-            <property name="javax.persistence.jdbc.user" value="root" /> <!-- usuario -->
-            <property name="javax.persistence.jdbc.password" value="root" /> <!-- senha -->
+            <property name="javax.persistence.jdbc.user" value="mysql" /> <!-- usuario -->
+            <property name="javax.persistence.jdbc.password" value="mysql" /> <!-- senha -->
 
             <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- atualiza tabela update -->
              <property name="hibernate.show_sql" value="true" /> <!-- mostrar SQL no console -->
