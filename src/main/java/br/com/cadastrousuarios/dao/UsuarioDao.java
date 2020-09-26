@@ -33,7 +33,7 @@ public class UsuarioDao implements Serializable{
 	}
 
 	// DELETE
-	public Usuario remover(Integer id) {
+	public Usuario remover(Long id) {
 
 		//Usuario usuario = null;
 		try {
@@ -50,7 +50,7 @@ public class UsuarioDao implements Serializable{
 	}
 
 	// SELECT(POR ID)
-	public Usuario buscarPorId(Integer id) {
+	public Usuario buscarPorId(Long id) {
 
 		//Usuario usuario = null; 
 

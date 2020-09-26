@@ -2,12 +2,16 @@ package br.com.cadastrousuarios.model;
 
 import java.io.Serializable;
 import java.util.List;
+
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="tbusuarios") 
@@ -17,19 +21,22 @@ public class Usuario implements Serializable{
 
 	@Id
 	@GeneratedValue
-	private Integer id;
+	private Long id;
 	
+	@NotNull
 	@Column
 	private String nome;
 	
+	@NotNull
 	@Column
 	private String email;
 	
+	@NotNull
 	@Column
 	private String senha;
 	
-	
-	@CollectionTable
+	@ElementCollection
+	@CollectionTable(name="usuario_telefone", joinColumns = @JoinColumn(name="usuario_id"))
 	private List <Telefone> telefones;
 	
 	
@@ -38,12 +45,12 @@ public class Usuario implements Serializable{
 	}
 
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
