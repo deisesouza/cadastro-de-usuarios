@@ -21,7 +21,14 @@
 		<p:layoutUnit position="west" size="300">
 			<ui:insert name="left">
 				<h:form id="form-menu">
-					<h:button value="Incluir" outcome="pages/incluirusuario.xhtml"/>
+					<h:commandLink value="Incluir Usuário"
+						action="pages/incluirusuario?faces-redirect=true" />
+					<br />
+					<h:commandLink value="Remover Usuário" />
+					<br />
+					<h:commandLink value="Alterar Usuário" />
+					<br />
+					<h:commandLink value="Consultar Usuário" />
 				</h:form>
 
 			</ui:insert>
