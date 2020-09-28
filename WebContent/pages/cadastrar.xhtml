@@ -10,30 +10,41 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>Cadastrar</title>
 </h:head>
-	
-	<h3>Cadastre-se!</h3>
-	
-		<h:form id="form">
-		<p:messages autoUpdate = "true" id ="mgs"/>
-			<p:panelGrid columns="3">
-				<p:outputLabel value="Nome" for="name" />
-				<p:inputText id="name" maxlength = "30" size ="30" value="#{UsuarioBean.usuario.nome}"/>
-				
-				<p:outputLabel value="E-mail" for="email" />
-				<p:inputText id="email" maxlength = "30" size ="30" value="#{UsuarioBean.usuario.email}" />
-				
-				<p:outputLabel value="Senha" for="senha"/>
-				<h:inputSecret id="senha" maxlength = "8" size ="30" value="#{UsuarioBean.usuario.senha}" />
-								
-				<p:outputLabel value="Telefone" for="telefone"/>
-				<p:inputText id="ddd" maxlength = "03" size ="03" value="#{UsuarioBean.usuario.telefones.ddd}" />
-				<p:inputText id="telefone" maxlength = "10" size ="10" value="#{UsuarioBean.usuario.telefones.telefone}" />			
-				
-				<p:commandButton value="Adicionar Telefone" action="#{UsuarioBean.usuario.addTelefone()}"/>
-				
-				<p:commandButton value="Cadastrar" action="#{UsuarioBean.salvar()}"/>
-				
-		</p:panelGrid>
-		</h:form>
+
+<h3>Cadastre-se!</h3>
+
+<h:form id="form">
+	<p:messages autoUpdate="true" id="mgs" />
+	<p:panelGrid columns="3">
+		<p:outputLabel value="Nome" for="name" />
+		<p:inputText id="name" maxlength="30" size="30"
+			value="#{UsuarioBean.usuario.nome}" />
+
+		<p:outputLabel value="E-mail" for="email" />
+		<p:inputText id="email" maxlength="30" size="30"
+			value="#{UsuarioBean.usuario.email}" />
+
+		<p:outputLabel value="Senha" for="senha" />
+		<h:inputSecret id="senha" maxlength="8" size="30"
+			value="#{UsuarioBean.usuario.senha}" />
+
+		<p:outputLabel value="Telefone" for="telefone" />
+		<p:inputText id="ddd" maxlength="03" size="03"
+			value="#{UsuarioBean.usuario.telefones.ddd}" />
+		<p:inputText id="telefone" maxlength="10" size="10"
+			value="#{UsuarioBean.usuario.telefones.telefone}" />
+		<h:selectOneMenu value="#{selectOneView.option}">
+			<f:selectItem itemLabel="fixo" itemValue="fixo" />
+			<f:selectItem itemLabel="celular" itemValue="celular" />
+			<f:selectItem itemLabel="comercial" itemValue="comercial" />
+		</h:selectOneMenu>
+
+		<p:commandButton value="Adicionar Telefone"
+			action="#{UsuarioBean.usuario.addTelefone()}" />
+
+		<p:commandButton value="Cadastrar" action="#{UsuarioBean.salvar()}" />
+
+	</p:panelGrid>
+</h:form>
 
 </html>
