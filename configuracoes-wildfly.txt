@@ -1,0 +1,46 @@
+Configurações do WildFly 11:
+
+
+No arquivo module:
+
+<module xmlns="urn:jboss:module:1.5" name="com.mysql">
+
+    <resources>
+        <resource-root path="mysql-connector-java-5.1.49-bin.jar"/>
+    </resources>
+    <dependencies>
+        <module name="javax.api"/>
+        <module name="javax.transaction.api"/>
+        <module name="javax.servlet.api" optional="true"/>
+    </dependencies>
+</module>
+
+
+No arquivo standalone:
+
+<datasource jndi-name="java:jboss/datasources/MySQL-DS" pool-name="MySQL" enabled="true" use-java-context="true">
+    <connection-url>jdbc:mysql://localhost:3306/bdusuarios</connection-url>
+    <driver>mysql</driver>
+    <security>
+        <user-name>mysql</user-name>
+        <password>mysql</password>
+    </security>
+</datasource>
+<drivers>
+    <driver name="h2" module="com.h2database.h2">
+        <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+    </driver>
+	<driver name="mysql" module="com.mysql">
+        <xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+    </driver>
+</drivers>
+  
+
+Banco de dados local:
+
+Schema: bdusuarios
+Host: 127.0.0.1
+Port: 3306
+User mysql 
+Senha: mysql
+  

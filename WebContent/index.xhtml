@@ -21,8 +21,8 @@
 		<h:outputText value="Senha:" for ="senha" />
 		<h:inputSecret id="senha" value="#{LoginBean.senha}"/>
 	</h:panelGrid>
-	<h:commandButton id="botao" value="Entrar" action="#{LoginBean.verificaLogin()}" />
-	<p:commandLink value ="Cadastre-se"/>
+	<h:commandButton id="botao" value="Entrar" action="#{LoginBean.verificaLogin()}"/>
+	<p:commandLink value ="Cadastre-se" action="#{LoginBean.cadastrar()}"/>
 	
 </h:form>
 	<h:outputText value="#{LoginBean.mensagem}" />

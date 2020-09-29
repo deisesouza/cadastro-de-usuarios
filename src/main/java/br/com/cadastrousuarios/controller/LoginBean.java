@@ -2,6 +2,7 @@ package br.com.cadastrousuarios.controller;
 
 import javax.faces.bean.ManagedBean;
 
+
 @ManagedBean(name = "LoginBean")
 public class LoginBean {
 
@@ -17,6 +18,11 @@ public class LoginBean {
 			return "";
 		}
 	}
+	
+	public String cadastrar(){
+		return "pages/cadastrar?faces-redirect=true";
+	}
+	
 
 	public String getUsuario() {
 		return usuario;
