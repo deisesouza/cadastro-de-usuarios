@@ -15,25 +15,24 @@
 
 <h:form id="form">
 	<p:messages autoUpdate="true" id="mgs" />
-	<p:panelGrid columns="3">
+	<p:panelGrid columns="2">
 		<p:outputLabel value="Nome" for="name" />
-		<p:inputText id="name" maxlength="30" size="30"
+		<p:inputText id="name" maxlength="40" size="40"
 			value="#{UsuarioBean.usuario.nome}" />
 
 		<p:outputLabel value="E-mail" for="email" />
-		<p:inputText id="email" maxlength="30" size="30"
+		<p:inputText id="email" maxlength="40" size="40"
 			value="#{UsuarioBean.usuario.email}" />
 
 		<p:outputLabel value="Senha" for="senha" />
-		<h:inputSecret id="senha" maxlength="8" size="30"
+		<h:inputSecret id="senha" maxlength="8" size="40"
 			value="#{UsuarioBean.usuario.senha}" />
-
-		<p:outputLabel value="Telefone" for="telefone" />
-		<p:inputText id="ddd" maxlength="03" size="03"
-			value="#{UsuarioBean.usuario.telefones.ddd}" />
-		<p:inputText id="telefone" maxlength="10" size="10"
-			value="#{UsuarioBean.usuario.telefones.telefone}" />
-		<h:selectOneMenu value="#{selectOneView.option}">
+			
+		<p:outputLabel for="telefone" value="Telefone:" />
+        <p:inputMask id="telefone" maxlength="10" size="20"
+        value="#{UsuarioBean.telefone.telefoneCompleto}" mask="(99)99999-9999"/>
+			
+		<h:selectOneMenu value="#{UsuarioBean.telefone.tipo}">
 			<f:selectItem itemLabel="fixo" itemValue="fixo" />
 			<f:selectItem itemLabel="celular" itemValue="celular" />
 			<f:selectItem itemLabel="comercial" itemValue="comercial" />
