@@ -7,12 +7,11 @@ import javax.faces.bean.ManagedBean;
 @ApplicationScoped
 public class LoginBean {
 
-	private String usuario;
-	private String senha;
+	public Usuario usuario;
 	private String mensagem;
 
 	public String verificaLogin() {
-		if (usuario.equalsIgnoreCase("deise") && (senha.equals("12345"))) {
+		if (usuario.getNome().equalsIgnoreCase("deise") && (usuario.getSenha().equals("12345"))) {
 			return "pages/home?faces-redirect=true";
 		} else {
 			mensagem = "Usuário ou Senha Inválidos";
