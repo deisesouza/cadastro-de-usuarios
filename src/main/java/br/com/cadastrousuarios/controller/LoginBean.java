@@ -1,9 +1,10 @@
 package br.com.cadastrousuarios.controller;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
-
 @ManagedBean(name = "LoginBean")
+@ApplicationScoped
 public class LoginBean {
 
 	private String usuario;
