@@ -54,7 +54,7 @@ public class Usuario implements Serializable{
 	}
 
 	public String getNome() {
-		return nome;
+		return nome == null ? "" : nome;
 	}
 
 
@@ -74,7 +74,7 @@ public class Usuario implements Serializable{
 
 
 	public String getSenha() {
-		return senha;
+		return senha == null ? "" : senha;
 	}
 
 
@@ -118,4 +118,7 @@ public class Usuario implements Serializable{
 			return false;
 		return true;
 	}
+	
+	
+
 }
