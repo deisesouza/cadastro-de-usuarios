@@ -2,11 +2,13 @@ package br.com.cadastrousuarios.controller;
 
 import java.io.Serializable;
 import java.util.List;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.com.cadastrousuarios.dao.UsuarioDao;
+import br.com.cadastrousuarios.model.Telefone;
 import br.com.cadastrousuarios.model.Usuario;
 import br.com.cadastrousuarios.negocio.MessageUtil;
 
@@ -18,6 +20,7 @@ public class UsuarioBean implements Serializable {
 
 	@Inject
 	private Usuario usuario;
+	private Telefone telefone;
 	UsuarioDao dao = new UsuarioDao();
 	MessageUtil mensagens = new MessageUtil();
 
@@ -61,5 +64,15 @@ public class UsuarioBean implements Serializable {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+
+	public Telefone getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(Telefone telefone) {
+		this.telefone = telefone;
+	}
+	
+	
 
 }
