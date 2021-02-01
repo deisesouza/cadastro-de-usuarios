@@ -2,19 +2,16 @@ package br.com.cadastrousuarios.model;
 
 import java.io.Serializable;
 import java.util.List;
-
-import javax.persistence.CollectionTable;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="tbusuarios") 
+@Table(name="tb_usuarios") 
 public class Usuario implements Serializable{
 		
 	private static final long serialVersionUID = 1L;
@@ -35,25 +32,26 @@ public class Usuario implements Serializable{
 	@Column
 	private String senha;
 	
-	@ElementCollection
-	@CollectionTable(name="usuario_telefone", joinColumns = @JoinColumn(name="usuario_id"))
+	@OneToMany
 	private List <Telefone> telefones;
 	
+	Telefone telefone = new Telefone();
+	
+	public void adicionarTelefones() {		
+		telefones.add(telefone);
+	}
 	
 	public Usuario() {
 		
 	}
 
-
 	public Long getId() {
 		return id;
 	}
 
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 
 	public String getNome() {
 		return nome;
@@ -104,7 +102,6 @@ public class Usuario implements Serializable{
 	}
 
 
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -121,7 +118,4 @@ public class Usuario implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
-
 }
