@@ -16,22 +16,27 @@
 <h:form id="form">
 	<p:messages autoUpdate="true" id="mgs" />
 	<p:panelGrid columns="2">
-		<p:outputLabel value="Nome" for="name" />
+		<p:outputText value="Nome" for="name" />
 		<p:inputText id="name" maxlength="40" size="40"
 			value="#{UsuarioBean.usuario.nome}" />
 
-		<p:outputLabel value="E-mail" for="email" />
+		<p:outputText value="E-mail" for="email" />
 		<p:inputText id="email" maxlength="40" size="40"
 			value="#{UsuarioBean.usuario.email}" />
 
-		<p:outputLabel value="Senha" for="senha" />
+		<p:outputText value="Senha" for="senha" />
 		<h:inputSecret id="senha" maxlength="8" size="40"
 			value="#{UsuarioBean.usuario.senha}" />
-			
-		<p:outputLabel for="telefone" value="Telefone:" />
-        <p:inputMask id="telefone" maxlength="10" size="20"
-        value="#{UsuarioBean.telefone.telefoneCompleto}" mask="(99)99999-9999"/>
-			
+
+		<p:outputText for="ddd" value="Telefone:" />
+		<p:inputMask id="telefone" maxlength="10" size="20"
+			value="#{UsuarioBean.telefone.ddd}"
+			mask="(99)" />
+
+		<p:inputMask id="telefone" maxlength="10" size="20"
+			value="#{UsuarioBean.telefone.telefone}"
+			mask="99999-9999" />
+
 		<h:selectOneMenu value="#{UsuarioBean.telefone.tipo}">
 			<f:selectItem itemLabel="fixo" itemValue="fixo" />
 			<f:selectItem itemLabel="celular" itemValue="celular" />
@@ -39,7 +44,7 @@
 		</h:selectOneMenu>
 
 		<p:commandButton value="Adicionar Telefone"
-			action="#{UsuarioBean.usuario.addTelefone()}" />
+			action="#{UsuarioBean.usuario.adicionarTelefone()}" />
 
 		<p:commandButton value="Cadastrar" action="#{UsuarioBean.salvar()}" />
 
