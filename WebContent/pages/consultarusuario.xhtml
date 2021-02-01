@@ -8,22 +8,38 @@
 
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Consultar Usuário</title>
+	<title>Consultar Usuários</title>
 </h:head>
 
 <ui:composition template="/template/template.xhtml">
 	<ui:define name="conteudo">
-	
-	<h3>Consultar Usuário</h3>
+
+		<h3>Listar Usuários Cadastrados</h3>
 		<h:form>
 			<h:panelGrid columns="2">
-				<p:outputLabel value="Nome" />
-				<p:inputText value="#{UsuarioController.usuario.nome}" id="nome"/>		
-				
-				<p:commandButton value="Consultar" action="#{UsuarioController.consultar()}"/>
-		</h:panelGrid>
-		</h:form>
+				<p:outputLabel value="Listar Usuários" />
 		
+				<p:commandButton value="Listar"
+					action="#{UsuarioBean.listar()}" />
+					
+					<h:dataTable value="#{UsuarioBean.listar}" var="l">
+						<h:column>
+							<f:facet name="header">Nome</f:facet>
+							#{l.nome}
+						</h:column>
+						<h:column>
+							<f:facet name="header">Email</f:facet>
+							#{l.email}
+						</h:column>
+						<h:column>
+							<f:facet name="header">Telefone</f:facet>
+							#{l.telefone}
+						</h:column>
+					
+					</h:dataTable>
+			</h:panelGrid>
+		</h:form>
+
 	</ui:define>
 </ui:composition>
 
