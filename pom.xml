@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -46,6 +47,13 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- IMPLEMENTACAO DO PRIMEFACES -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>8.0</version>
+		</dependency>
+
 		<!-- IMPLEMENTACAO DO HIBERNATE/JPA -->
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
@@ -87,8 +95,6 @@
 			<artifactId>jandex</artifactId>
 			<version>1.2.3.Final</version>
 		</dependency>
-
-
 
 	</dependencies>
 </project>
