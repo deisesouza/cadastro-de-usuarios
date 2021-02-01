@@ -17,31 +17,27 @@
 				<h2>Sistema de Cadastro de Usuários</h2>
 			</ui:insert>
 		</p:layoutUnit>
-
 		<p:layoutUnit position="west" size="300">
 			<ui:insert name="left">
 				<h:form id="form-menu">
-					<h:commandLink value="Incluir Usuário"
-						action="pages/incluirusuario?faces-redirect=true" />
+					<h:button outcome="incluirusuario" value="Consultar Usuário"/>
 					<br />
-					<h:commandLink value="Remover Usuário" />
+					<h:button outcome="incluirusuario" value="Incluir Usuário"/>
 					<br />
-					<h:commandLink value="Alterar Usuário" />
+					<h:button outcome="incluirusuario" value="Alterar Usuário"/>
 					<br />
-					<h:commandLink value="Consultar Usuário" />
+					<h:button outcome="incluirusuario" value="Remover Usuário"/>
 				</h:form>
-
 			</ui:insert>
 		</p:layoutUnit>
 
-		<p:growl id="msgGlobal" showDetail="true" sticky="true" />  
-       
+		<p:growl id="msgGlobal" showDetail="true" sticky="true" />
+
 		<p:layoutUnit position="center">
 			<ui:insert name="conteudo">
 				<h:outputText value="Conteúdo da aplicação - Área editável." />
 			</ui:insert>
 		</p:layoutUnit>
-
 
 		<!-- rodapé -->
 		<p:layoutUnit position="south" size="80">
