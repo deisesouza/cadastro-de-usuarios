@@ -1,42 +1,50 @@
 package br.com.cadastrousuarios.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-import javax.persistence.Embeddable;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Transient;
+@Entity
+@Table(name="tb_telefone") 
+public class Telefone implements Serializable{
 
-@Embeddable
-public class Telefone {
+	private static final long serialVersionUID = 1L;
 
-	private Integer ddd;
-
-	private String telefone;
-
+	@Id
+	@GeneratedValue
+	private Long id;	
 	@Column
-	@Enumerated(EnumType.STRING)
-	private Tipo tipo;
-
-	@Transient
-	public String codigo;
-	@Transient
-	private String telefoneCompleto;
+	private Integer ddd;
+	@Column
+	private String telefone;
+	@Column
+	private String tipo;
+	
+	@ManyToOne
+	private Usuario usuario;
+	
 	
 	public void init() {
-		separarTelefoneDdd();
-	}
-	
-	public Telefone() {
 		
 	}
 
-	public void separarTelefoneDdd() {
-		this.codigo = this.telefoneCompleto.substring(1, 3);
-		this.telefone = this.telefoneCompleto.substring(4, 14);
-		this.ddd = Integer.parseInt(codigo);
+	public Telefone() {
+
 	}
-		
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public Integer getDdd() {
 		return ddd;
 	}
@@ -53,20 +61,38 @@ public class Telefone {
 		this.telefone = telefone;
 	}
 
-	public Tipo getTipo() {
+	public String getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(Tipo tipo) {
+	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
 
-	public String getTelefoneCompleto() {
-		return telefoneCompleto;
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
 	}
 
-	public void setTelefoneCompleto(String telefoneCompleto) {
-		this.telefoneCompleto = telefoneCompleto;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Telefone other = (Telefone) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
 	}
 
 }
