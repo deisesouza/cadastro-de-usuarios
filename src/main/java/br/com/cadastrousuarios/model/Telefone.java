@@ -17,13 +17,15 @@ public class Telefone implements Serializable{
 
 	@Id
 	@GeneratedValue
-	private Long id;	
+	private long id;	
 	@Column
-	private Integer ddd;
+	private Integer ddd = 0;
 	@Column
-	private String telefone;
+	private String telefone = "";
 	@Column
-	private String tipo;
+	private String tipo = "";
+	
+	private String dddEntrada = "";
 	
 	@ManyToOne
 	private Usuario usuario;
@@ -45,12 +47,17 @@ public class Telefone implements Serializable{
 		this.id = id;
 	}
 
-	public Integer getDdd() {
-		return ddd;
+	/*public void setDdd(Integer ddd) {
+		this.ddd = ddd;
+	}*/
+
+	public String getDddEntrada() {
+		return dddEntrada;
 	}
 
-	public void setDdd(Integer ddd) {
-		this.ddd = ddd;
+	public void setDddEntrada(String dddEntrada) {
+		this.dddEntrada = dddEntrada;
+		this.ddd = Integer.parseInt(dddEntrada);
 	}
 
 	public String getTelefone() {
@@ -69,12 +76,11 @@ public class Telefone implements Serializable{
 		this.tipo = tipo;
 	}
 
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + (int) (id ^ (id >>> 32));
 		return result;
 	}
 
@@ -87,10 +93,7 @@ public class Telefone implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Telefone other = (Telefone) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
+		if (id != other.id)
 			return false;
 		return true;
 	}
