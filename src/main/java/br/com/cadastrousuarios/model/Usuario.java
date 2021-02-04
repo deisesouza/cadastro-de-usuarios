@@ -1,6 +1,7 @@
 package br.com.cadastrousuarios.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,22 +19,22 @@ public class Usuario implements Serializable{
 
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Long id = 0l;
 	
 	@NotNull
 	@Column
-	private String nome;
+	private String nome = "";
 	
 	@NotNull
 	@Column
-	private String email;
+	private String email = "";
 	
 	@NotNull
 	@Column
-	private String senha;
+	private String senha = "";
 	
 	@OneToMany
-	private List <Telefone> telefones;
+	private List <Telefone> telefones = new ArrayList<>();
 	
 	Telefone telefone = new Telefone();
 	
